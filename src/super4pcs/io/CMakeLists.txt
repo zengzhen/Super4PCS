@@ -5,7 +5,7 @@ set(io_ROOT "${SRC_DIR}/super4pcs/io")
 file(GLOB_RECURSE io_sources ${io_ROOT}/*.cc)
 file(GLOB_RECURSE io_headers ${io_ROOT}/*.h ${io_ROOT}/*.hpp)
 
-add_library(super4pcs_io ${io_sources} ${io_headers})
+add_library(super4pcs_io SHARED ${io_sources} ${io_headers})
 
 if(IO_USE_OPENCV)
     find_package( OpenCV REQUIRED)

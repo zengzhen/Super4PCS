@@ -5,7 +5,7 @@ set(algo_ROOT "${SRC_DIR}/super4pcs/algorithms")
 file(GLOB_RECURSE algo_sources ${algo_ROOT}/*.cc)
 file(GLOB_RECURSE algo_headers ${algo_ROOT}/*.h ${algo_ROOT}/*.hpp)
 
-add_library(super4pcs_algo ${algo_headers} ${algo_sources})
+add_library(super4pcs_algo SHARED ${algo_headers} ${algo_sources})
 # we need that since super4pcs_accel is an header only library
 if(SUPER4PCS_USE_CHEALPIX)
     target_link_libraries(super4pcs_algo ${Chealpix_LIBS} )
